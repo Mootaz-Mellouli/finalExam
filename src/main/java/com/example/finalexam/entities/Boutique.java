@@ -29,5 +29,6 @@ public class Boutique {
 
 
     @ManyToOne
+    @JsonIgnore
     private CentreCommercial centreCommercial;
 }
