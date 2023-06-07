@@ -1,5 +1,8 @@
 package com.example.finalexam.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,9 +24,9 @@ public class Boutique {
     private String nom;
     @Enumerated(EnumType.STRING)
     private Categorie categorie;
-
     @ManyToMany(mappedBy = "boutiqueList")
     private List<Client> clientList;
+
 
     @ManyToOne
     private CentreCommercial centreCommercial;

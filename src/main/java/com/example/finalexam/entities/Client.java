@@ -1,5 +1,6 @@
 package com.example.finalexam.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,6 @@ public class Client {
     private Genre genre;
 
     @ManyToMany
+    @JsonIgnore
     private List<Boutique> boutiqueList;
 }

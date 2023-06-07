@@ -106,4 +106,9 @@ public class ExamsServiceImpl implements IExamService {
         newList.add(boutique);
         newClient.setBoutiqueList(newList);
     }
+
+    @Override
+    public List<Client> listeClientsParCategorie(Categorie categorie) {
+        return clientRepository.findByBoutiqueListCategorie(categorie);
+    }
 }

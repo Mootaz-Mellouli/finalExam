@@ -28,6 +28,11 @@ public class ExamController {
     public void ajouterEtAffecterClientBoutique(@RequestBody Client client,@PathVariable Long idBoutique) {
         examService.ajouterEtAffecterClientBoutique(client, idBoutique);
     }
+
+    @GetMapping("getClient/{categorie}")
+    public List<Client> listeClientsParCategorie(@PathVariable Categorie categorie) {
+        return examService.listeClientsParCategorie(categorie);
+    }
     /*@PostMapping("/addClasse")
     public Classe ajouterClass(@RequestBody Classe c) {
         return examService.ajouterClass(c);
