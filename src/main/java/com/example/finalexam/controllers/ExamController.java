@@ -23,6 +23,11 @@ public class ExamController {
     public void ajouterEtAffecterListeBoutique(@RequestBody List<Boutique> lb, @PathVariable Long idCentre) {
          examService.ajouterEtAffecterListeBoutique(lb, idCentre);
     }
+
+    @PostMapping("/addClient/{idBoutique}")
+    public void ajouterEtAffecterClientBoutique(@RequestBody Client client,@PathVariable Long idBoutique) {
+        examService.ajouterEtAffecterClientBoutique(client, idBoutique);
+    }
     /*@PostMapping("/addClasse")
     public Classe ajouterClass(@RequestBody Classe c) {
         return examService.ajouterClass(c);

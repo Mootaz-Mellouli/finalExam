@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -94,5 +95,15 @@ public class ExamsServiceImpl implements IExamService {
            CentreCommercial centreCommercial = centreCommercialRepository.findById(idCentre).orElse(null);
             newBoutique.setCentreCommercial(centreCommercial);
         });
+    }
+
+    @Override
+    @Transactional
+    public void ajouterEtAffecterClientBoutique(Client client, Long idBoutique) {
+        Client newClient = clientRepository.saveAndFlush(client);
+        Boutique boutique = boutiqueRepository.findById(idBoutique).orElse(null);
+        List<Boutique> newList = new ArrayList<>();
+        newList.add(boutique);
+        newClient.setBoutiqueList(newList);
     }
 }
