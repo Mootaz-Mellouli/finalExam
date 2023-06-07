@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface BoutiqueRepository extends JpaRepository<Boutique, Long> {
-    @Query("select b from Boutique b where b.nom = ?1 and b.centreCommercial.adresse = ?2")
-    List<Boutique> findByNomAndCentreCommercialAdresse(String nom, String adresse);
+    @Query("select b from Boutique b where b.centreCommercial.nom = ?1 and b.centreCommercial.adresse = ?2")
+    List<Boutique> findByCentreCommercialNomAndCentreCommercialAdresse(String nom, String adresse);
 }
