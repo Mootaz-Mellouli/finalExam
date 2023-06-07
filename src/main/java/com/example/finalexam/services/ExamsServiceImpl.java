@@ -111,4 +111,9 @@ public class ExamsServiceImpl implements IExamService {
     public List<Client> listeClientsParCategorie(Categorie categorie) {
         return clientRepository.findByBoutiqueListCategorie(categorie);
     }
+
+    @Override
+    public List<Boutique> listeBoutiques(String nomCentre, String adresseCentre) {
+        return boutiqueRepository.findByNomAndCentreCommercialAdresse(nomCentre, adresseCentre);
+    }
 }

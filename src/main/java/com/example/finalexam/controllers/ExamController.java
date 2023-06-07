@@ -33,6 +33,11 @@ public class ExamController {
     public List<Client> listeClientsParCategorie(@PathVariable Categorie categorie) {
         return examService.listeClientsParCategorie(categorie);
     }
+
+    @GetMapping("getBoutique/{nomCentre}/{adresseCentre}")
+    public List<Boutique> listeBoutiques(@PathVariable String nomCentre, @PathVariable String adresseCentre) {
+        return examService.listeBoutiques(nomCentre, adresseCentre);
+    }
     /*@PostMapping("/addClasse")
     public Classe ajouterClass(@RequestBody Classe c) {
         return examService.ajouterClass(c);

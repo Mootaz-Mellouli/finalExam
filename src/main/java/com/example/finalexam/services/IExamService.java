@@ -14,4 +14,6 @@ public interface IExamService {
 
    List<Client> listeClientsParCategorie(Categorie categorie);
 
+   List<Boutique> listeBoutiques(String nomCentre, String adresseCentre);
+
 }
